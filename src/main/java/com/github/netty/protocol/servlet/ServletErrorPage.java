@@ -2,6 +2,7 @@ package com.github.netty.protocol.servlet;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.Objects;
 
 /**
  * Error page
@@ -56,7 +57,7 @@ public class ServletErrorPage {
         }
 
         ServletErrorPage errorPage = (ServletErrorPage) o;
-        return status == errorPage.status && (exception != null ? exception.equals(errorPage.exception) : errorPage.exception == null) && (path != null ? path.equals(errorPage.path) : errorPage.path == null);
+        return status == errorPage.status && (Objects.equals(exception, errorPage.exception)) && (Objects.equals(path, errorPage.path));
     }
 
     @Override
