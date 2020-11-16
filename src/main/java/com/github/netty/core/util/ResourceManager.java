@@ -44,7 +44,9 @@ public class ResourceManager {
         }
         this.workspace = workspace;
         this.classLoader = classLoader == null? getClass().getClassLoader():classLoader;
-        logger.info("ResourceManager rootPath={},workspace={}",rootPath,workspace);
+        if (logger.isDebugEnabled()) {
+            logger.debug("ResourceManager rootPath={},workspace={}",rootPath,workspace);
+        }
     }
 
     /**
